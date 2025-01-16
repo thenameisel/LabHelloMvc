@@ -10,12 +10,24 @@ namespace LabHelloMvc.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+
+
             _logger = logger;
         }
 
+
+
         public IActionResult Index()
         {
-            return View();
+
+            var Person = new Person
+            {
+                PersonId = 001,
+                FirstName = "Chris P",
+                LastName = "Bacon"
+            };
+
+            return View(Person);
         }
 
         public IActionResult Privacy()
